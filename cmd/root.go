@@ -5,7 +5,6 @@ package cmd
 
 import (
 	"calcsizev1/FileWordCount"
-	"fmt"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"os"
@@ -26,7 +25,6 @@ var rootCmd = &cobra.Command{
 			}).Errorf("Error in file path flag!")
 			os.Exit(1)
 		}
-		fmt.Println(path)
 		totalWordsInDir := FileWordCount.CountTotalWordInDir(path)
 		log.Infof("Total words in the directory %s: %d", path, totalWordsInDir)
 	},
